@@ -2322,6 +2322,7 @@ class FastLlamaModel:
             model = AutoModelForSequenceClassification.from_pretrained(
                 model_name,
                 device_map = device_map,
+                revision=revision,
                 # torch_dtype             = dtype, # transformers changed torch_dtype to dtype
                 num_labels = num_labels,
                 # quantization_config     = bnb_config,
@@ -2335,6 +2336,7 @@ class FastLlamaModel:
             model = AutoModelForCausalLM.from_pretrained(
                 model_name,
                 device_map = device_map,
+                revision=revision,
                 # torch_dtype             = dtype, # transformers changed torch_dtype to dtype
                 # quantization_config     = bnb_config,
                 token = token,
